@@ -6,7 +6,6 @@ module.exports = {
       .then(response => res.json(response))
       .catch(error => res.json(error));
   },
-
   edituser: (req, res) => {
     const id = req.params.id;
     const arr = req.body.answers;
