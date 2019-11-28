@@ -34,7 +34,7 @@ module.exports = {
   deleteSurvey: (req, res) => {
     const id = req.params.id;
     deleteSurvey(id)
-      .then(response => res.json(response[0]))
+      .then(response => res.json(response))
       .catch(error => res.json(error));
   }
 };
