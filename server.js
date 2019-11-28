@@ -3,14 +3,15 @@ require("dotenv").config();
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
-const surveys = require("./src/routes/surveys");
+const root = require("./src/routes/root");
 
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(logger("dev"));
-app.use(surveys);
+app.use("/api", root);
 
 const port = process.env.PORT;
 
