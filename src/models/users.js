@@ -15,11 +15,11 @@ module.exports = {
       });
     });
   },
-  getUserByName: name => {
+  getUserByEmail: email => {
     return new Promise((resolve, reject) => {
       db.query(
-        "SELECT * FROM users WHERE name=?",
-        [name],
+        "SELECT * FROM users WHERE email=?",
+        [email],
         (error, response) => {
           !error ? resolve(response) : reject(error);
         }
