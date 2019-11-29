@@ -40,15 +40,13 @@ DATABASE=survey_system
 
 **1. POSTMAN_LINK**
 
-- <a href="https://www.getpostman.com/collections/65aad291c9b780ba9c72">Postman</a>
+- <a href="https://www.getpostman.com/collections/65aad291c9b780ba9c72">Postman Link Collection</a>
 
 **2. POSTMAN_IMPORT_FILE**
 
 - Import postman collection json from the project directory to the postman app
-  **3. DOCUMENTATION.REST**
+
+**3. DOCUMENTATION.REST**
 - Install rest client extention from vs code then open documentation.rest file and then send request from inside the file
 
-**4. DELETE**
 
-- `/book/:id` (Delete book by id)
-- `/genre/:id` (Delete genre by id)
