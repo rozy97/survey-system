@@ -1,7 +1,6 @@
-<h1 align="center">Rent Book App - Simple App RESTfull API</h1>
+<h1 align="center">Survey System API - Simple RESTfull API</h1>
 
-Rent App is a simple rent application specially for backend only. Built with NodeJs using the ExpressJs Framework.
-Express.js is a web application framework for Node.js. [More about Express](https://en.wikipedia.org/wiki/Express.js)
+
 
 ## Built With
 
