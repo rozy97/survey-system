@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { verifyToken, verifyAdmin } = require("../middleware/auth");
 const {
   getAllusers,
   getUserById,
@@ -11,13 +12,13 @@ const {
 } = require("../controllers/users");
 
 router
-  .get("/", getAllusers)
-  .get("/id/:id", getUserById)
-  .get("/info", getAllSubmissionAndScore)
+  .get("/", verifyToken, verifyAdmin, getAllusers)
+  .get("/id/:id", verifyToken, getUserById)
+  .get("/info", verifyToken, verifyAdmin, getAllSubmissionAndScore)
   .post("/register", register)
   .post("/login", login)
-  .post("/registeradmin", registerAdmin)
-  .patch("/id/:id", submitAnswers)
-  .delete("/id/:id", deleteUser);
+  .post("/registeradmin", verifyToken, verifyAdmin, registerAdmin)
+  .patch("/id/:id", verifyToken, submitAnswers)
+  .delete("/id/:id", verifyToken, verifyAdmin, deleteUser);
 
 module.exports = router;

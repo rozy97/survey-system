@@ -1,4 +1,7 @@
 const router = require("express").Router();
+
+const { verifyToken, verifyAdmin } = require("../middleware/auth");
+
 const {
   getAllSurveys,
   getSingleSurvey,
@@ -8,10 +11,10 @@ const {
 } = require("../controllers/surveys");
 
 router
-  .get("/", getAllSurveys)
-  .get("/id/:id", getSingleSurvey)
-  .post("/", addSurvey)
-  .patch("/id/:id", editSurvey)
-  .delete("/id/:id", deleteSurvey);
+  .get("/", verifyToken, getAllSurveys)
+  .get("/id/:id", verifyToken, getSingleSurvey)
+  .post("/", verifyToken, verifyAdmin, addSurvey)
+  .patch("/id/:id", verifyToken, verifyAdmin, editSurvey)
+  .delete("/id/:id", verifyToken, verifyAdmin, deleteSurvey);
 
 module.exports = router;

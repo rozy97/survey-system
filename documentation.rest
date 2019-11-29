@@ -1,0 +1,23 @@
+### Login as admin
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+ "email" : "admin@mail.com",
+ "password" : "admin"
+}
+
+### Get All Users
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJwYXJ0aWNpcGF0ZWQiOiJubyIsImFuc3dlcnMiOm51bGwsInNjb3JlIjowLCJpYXQiOjE1NzQ5OTUxODR9.jPGvcyV-LyeAFn0iYOG7GR86FzfgVNowY-oi6uFOJY4
+
+### Add Survey
+POST http://localhost:5000/api/surveys
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJwYXJ0aWNpcGF0ZWQiOiJubyIsImFuc3dlcnMiOm51bGwsInNjb3JlIjowLCJpYXQiOjE1NzQ5OTUxODR9.jPGvcyV-LyeAFn0iYOG7GR86FzfgVNowY-oi6uFOJY4
+Content-Type: application/json
+
+
+  {
+    "question" : "what is the capital of usa",
+    "answer" : "washington"
+  }

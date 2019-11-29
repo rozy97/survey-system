@@ -42,8 +42,12 @@ module.exports = {
       .then(result => {
         if (result.length != 0) {
           if (data.password === result[0].password) {
+            const { id, name, email, password } = result[0];
             const payload = {
-              ...result[0]
+              id,
+              name,
+              email,
+              password
             };
             const token = "Bearer " + jwt.sign(payload, "secretkey");
             res.json(token);
