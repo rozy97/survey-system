@@ -6,6 +6,7 @@ const {
   editUser,
   deleteUser
 } = require("../models/users");
+const { getAllSurveys } = require("../models/surveys");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
@@ -42,12 +43,13 @@ module.exports = {
       .then(result => {
         if (result.length != 0) {
           if (data.password === result[0].password) {
-            const { id, name, email, password } = result[0];
+            const { id, name, email, password, level } = result[0];
             const payload = {
               id,
               name,
               email,
-              password
+              password,
+              level
             };
             const token = "Bearer " + jwt.sign(payload, "secretkey");
             res.json(token);
@@ -69,16 +71,29 @@ module.exports = {
   },
 
   submitAnswers: (req, res) => {
-    const id = req.params.id;
-    const arr = req.body;
-    let data = [];
-    arr.map(answer => {
-      data = [...data, ...Object.values(answer)];
-    });
+    getAllSurveys()
+      .then(result => {
+        const id = req.id;
+        const arr = req.body;
+        if (result.length === arr.length) {
+          let data = [],
+            score = 0;
 
-    data = { answers: data.toString(), participated: "yes", score };
-    editUser(id, data)
-      .then(response => res.json(response))
+          for (let i = 0; i < arr.length; i++) {
+            if (result[i].answer == arr[i].answer) {
+              score += 1;
+            }
+            data = [...data, ...Object.values(arr[i])];
+          }
+
+          data = { answers: data.toString(), participated: "yes", score };
+          editUser(id, data)
+            .then(response => res.json(response))
+            .catch(error => res.json(error));
+        } else {
+          res.json({ msg: "you must answer all the question" });
+        }
+      })
       .catch(error => res.json(error));
   },
   getAllSubmissionAndScore: (req, res) => {

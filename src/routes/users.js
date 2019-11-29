@@ -18,7 +18,7 @@ router
   .post("/register", register)
   .post("/login", login)
   .post("/registeradmin", verifyToken, verifyAdmin, registerAdmin)
-  .patch("/id/:id", verifyToken, submitAnswers)
+  .post("/submit", verifyToken, submitAnswers)
   .delete("/id/:id", verifyToken, verifyAdmin, deleteUser);
 
 module.exports = router;

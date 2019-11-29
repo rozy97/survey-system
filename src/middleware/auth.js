@@ -9,6 +9,7 @@ module.exports = {
     jwt.verify(token, "secretkey", (err, user) => {
       if (err) return res.sendStatus(403);
       req.level = user.level;
+      req.id = user.id;
       next();
     });
   },

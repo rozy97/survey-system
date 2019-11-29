@@ -18,6 +18,68 @@ Content-Type: application/json
 
 
   {
-    "question" : "what is the capital of usa",
-    "answer" : "washington"
+    "question" : "what is the capital of norway",
+    "answer" : "oslo"
   }
+
+### Login user
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+ "email" : "andi@gmail.com",
+ "password" : "123456"
+}
+
+### submit survey
+POST http://localhost:5000/api/users/submit
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywibmFtZSI6ImZpcm1hbnN5YWgiLCJlbWFpbCI6ImZpcm1hbnN5YWhAZ21haWwuY29tIiwicGFzc3dvcmQiOiJhc2QxMjMiLCJsZXZlbCI6InVzZXIiLCJpYXQiOjE1NzUwMDI5NzR9.1gvn1vYj1qVMgSAWB7kKL4Aa__y5FdEcL26HIhFAQDg
+Content-Type: application/json
+
+[
+  {
+    "answer" :"jakarta"
+  },
+  {
+    "answer" :"paris"
+  },
+  {
+    "answer" :"berlin"
+  },
+  {
+    "answer" :"bangkok"
+  },
+  {
+    "answer" :"wrong"
+  },
+  {
+    "answer" :"wrong"
+  },
+  {
+    "answer" :"jakarta"
+  },
+  {
+    "answer" :"wrong"
+  },
+  {
+    "answer" :"moscow"
+  },
+  {
+    "answer" :"oslo"
+  }
+]
+
+### get all submission and score
+GET http://localhost:5000/api/users/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJwYXJ0aWNpcGF0ZWQiOiJubyIsImFuc3dlcnMiOm51bGwsInNjb3JlIjowLCJpYXQiOjE1NzQ5OTUxODR9.jPGvcyV-LyeAFn0iYOG7GR86FzfgVNowY-oi6uFOJY4
+Content-Type: application/json
+
+
+### Register
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+  "email":"firmansyah@gmail.com",
+  "password":"asd123"
+}
