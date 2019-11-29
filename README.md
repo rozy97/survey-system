@@ -19,9 +19,9 @@ Express.js is a web application framework for Node.js. [More about Express](http
 
 1. Open app's directory in CMD or Terminal
 2. Type `npm install`
-3. Make new file a called **.env**, set up first [here](#set-up-env-file)
-4. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
-5. Create a database with the name simple-rest, and Import file [survey_system.sql](note.sql) to **phpmyadmin**
+3. Turn on Web Server and MySQL can using Third-party tool like xampp, etc.
+4. Create a database with the name simple-rest, and Import file [survey_system.sql](survey_system.sql) to **phpmyadmin**
+5. Type `npm run dev` or `npm start` to run the server
 6. Open Postman desktop application or Chrome web app extension that has installed before
 7. Choose HTTP Method and enter request url.(ex. localhost:5000/notes)
 
