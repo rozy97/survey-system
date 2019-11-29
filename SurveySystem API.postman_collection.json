@@ -1,0 +1,461 @@
+{
+	"info": {
+		"_postman_id": "c44c9df5-9330-4b3b-8e24-85647e09b9cb",
+		"name": "SurveySystem API",
+		"description": "Create API for survey system application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Surveys",
+			"item": [
+				{
+					"name": "GET All Surveys",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"name": "Content-Type",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"surveys"
+							]
+						},
+						"description": "Get All Surveys from the database"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Single Survey",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/surveys/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"surveys",
+								"id",
+								"1"
+							]
+						},
+						"description": "Get single survey by id from the database"
+					},
+					"response": []
+				},
+				{
+					"name": "ADD Survey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"question\" : \"testing add survey\",\n\t\"answer\" : \"the answer\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/surveys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"surveys"
+							]
+						},
+						"description": "Add new survey to the database. request body contains question and answer which both type is string. id unique auto increment"
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT Survey",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"question\" : \"testing edit question\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/surveys/id/1005",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"surveys",
+								"id",
+								"1005"
+							]
+						},
+						"description": "Edit Survey from the database by id"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Survey",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/surveys/id/1005",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"surveys",
+								"id",
+								"1005"
+							]
+						},
+						"description": "Delete survey from the database selected by id"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"admin@mail.com\",\n\t\"password\" : \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						},
+						"description": "Get user by table, and then compare the password. if match, api will generate token for authentication"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"rozy\",\n\t\"email\" : \"rozy@gmail.com\",\n\t\"password\" : \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						},
+						"description": "API for register new user. request body contains name, email, and password"
+					},
+					"response": []
+				},
+				{
+					"name": "GET All User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						},
+						"description": "Get all user from the database. only administrator can access this API"
+					},
+					"response": []
+				},
+				{
+					"name": "GET User By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"2"
+							]
+						},
+						"description": "get user from the database selected by id"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Submission & Score",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SUBMIT Survey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6InJvenkiLCJlbWFpbCI6InJvenlAZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMjM0IiwibGV2ZWwiOiJ1c2VyIiwiaWF0IjoxNTc1MDA2NjA2fQ.PM3OhpWceAokKJTe-MVivXvEG4dEHFOF3hC4xXAujtM",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"answer\" :\"jakarta\"\r\n  },\r\n  {\r\n    \"answer\" :\"paris\"\r\n  },\r\n  {\r\n    \"answer\" :\"berlin\"\r\n  },\r\n  {\r\n    \"answer\" :\"bangkok\"\r\n  },\r\n  {\r\n    \"answer\" :\"wrong\"\r\n  },\r\n  {\r\n    \"answer\" :\"wrong\"\r\n  },\r\n  {\r\n    \"answer\" :\"jakarta\"\r\n  },\r\n  {\r\n    \"answer\" :\"wrong\"\r\n  },\r\n  {\r\n    \"answer\" :\"moscow\"\r\n  },\r\n  {\r\n    \"answer\" :\"osloww\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/submit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"submit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 4,\n\t\"level\" : \"administrator\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/registeradmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"registeradmin"
+							]
+						},
+						"description": "Register normal user tobe administrator"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE User",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiYWRtaW4iLCJsZXZlbCI6ImFkbWluaXN0cmF0b3IiLCJpYXQiOjE1NzUwMDQ5Nzh9.Bpib5p4fxEJ-uDmLlbAvOu5Lt3UHd2xnY1mwzIDmrd8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/id/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"id",
+								"5"
+							]
+						},
+						"description": "Delete user from the database selected by id"
+					},
+					"response": []
+				}
+			],
+			"description": "API documentation contains all users api",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

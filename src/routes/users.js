@@ -13,7 +13,7 @@ const {
 
 router
   .get("/", verifyToken, verifyAdmin, getAllusers)
-  .get("/id/:id", verifyToken, getUserById)
+  .get("/id/:id", verifyToken, verifyAdmin, getUserById)
   .get("/info", verifyToken, verifyAdmin, getAllSubmissionAndScore)
   .post("/register", register)
   .post("/login", login)
